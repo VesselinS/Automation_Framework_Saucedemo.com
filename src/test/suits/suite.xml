@@ -5,27 +5,27 @@
 
     <test name="Successful Login Test">
         <classes>
-            <class name="qa.automation.SuccessfulLoginTest"/>
+            <class name="tests.qa.automation.SuccessfulLoginTest"/>
         </classes>
     </test>
     <test name="Unsuccessful Login Test">
         <classes>
-            <class name="qa.automation.UnsuccessfulLoginTest"/>
+            <class name="tests.qa.automation.UnsuccessfulLoginTest"/>
         </classes>
     </test>
     <test name="Add Product Into Cart Test">
         <classes>
-            <class name="qa.automation.AddProductIntoCartTest"/>
+            <class name="tests.qa.automation.AddProductIntoCartTest"/>
         </classes>
     </test>
 <!--    <test name="Buy Products From Cart Test">-->
 <!--        <classes>-->
-<!--            <class name="qa.automation.BuyProductsFromCartTest"/>-->
+<!--            <class name="tests.qa.automation.BuyProductsFromCartTest"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 <!--    <test name="Problem Users Test">-->
 <!--        <classes>-->
-<!--            <class name="qa.automation.ProblemUsersTest"/>-->
+<!--            <class name="tests.qa.automation.ProblemUsersTest"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 </suite>

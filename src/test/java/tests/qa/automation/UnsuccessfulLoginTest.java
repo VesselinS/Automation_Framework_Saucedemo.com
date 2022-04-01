@@ -1,4 +1,4 @@
-package qa.automation;
+package tests.qa.automation;
 
 import base.TestUtil;
 import com.opencsv.exceptions.CsvException;

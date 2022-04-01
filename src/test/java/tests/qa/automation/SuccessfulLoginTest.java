@@ -1,4 +1,4 @@
-package qa.automation;
+package tests.qa.automation;
 
 import base.TestUtil;
 import com.opencsv.exceptions.CsvException;
@@ -21,6 +21,7 @@ public class SuccessfulLoginTest extends TestUtil {
         //POM
         LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login(userName, password);
+
         productsPage.userAllPagesButton();
 
     }
