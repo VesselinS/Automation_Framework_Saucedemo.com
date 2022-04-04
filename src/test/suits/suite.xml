@@ -18,14 +18,14 @@
             <class name="tests.qa.automation.AddProductIntoCartTest"/>
         </classes>
     </test>
-<!--    <test name="Buy Products From Cart Test">-->
-<!--        <classes>-->
-<!--            <class name="tests.qa.automation.BuyProductsFromCartTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Problem Users Test">-->
-<!--        <classes>-->
-<!--            <class name="tests.qa.automation.ProblemUsersTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Buy Products From Cart Test">
+        <classes>
+            <class name="tests.qa.automation.BuyProductsFromCartTest"/>
+        </classes>
+    </test>
+    <test name="Problem Users Test">
+        <classes>
+            <class name="tests.qa.automation.ProblemUsersTest"/>
+        </classes>
+    </test>
 </suite>
