@@ -3,6 +3,7 @@ package base;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -45,6 +46,9 @@ public class TestUtil {
             case "firefox":
                 createFirefoxDriver(url, implicitWait);
                 break;
+            case "edge":
+                createEdgeDriver(url, implicitWait);
+                break;
             default:
                 throw new IllegalStateException("Unsupported browser type");
         }
@@ -64,6 +68,13 @@ public class TestUtil {
     private void createFirefoxDriver(String url, int implicitWait){
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
+        loadUrl(url);
+    }
+
+    private void createEdgeDriver(String url, int implicitWait){
+        WebDriverManager.edgedriver().setup();
+        driver = new EdgeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
         loadUrl(url);
     }
