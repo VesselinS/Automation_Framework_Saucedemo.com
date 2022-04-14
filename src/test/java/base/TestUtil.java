@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import java.io.FileInputStream;
@@ -49,6 +50,9 @@ public class TestUtil {
             case "edge":
                 createEdgeDriver(url, implicitWait);
                 break;
+            case "opera":
+                createOperaDriver(url, implicitWait);
+                break;
             default:
                 throw new IllegalStateException("Unsupported browser type");
         }
@@ -75,6 +79,13 @@ public class TestUtil {
     private void createEdgeDriver(String url, int implicitWait){
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
+        loadUrl(url);
+    }
+
+    private void createOperaDriver(String url, int implicitWait){
+        WebDriverManager.operadriver().setup();
+        driver = new OperaDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
         loadUrl(url);
     }
