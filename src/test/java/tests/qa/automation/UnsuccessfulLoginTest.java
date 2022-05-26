@@ -22,7 +22,7 @@ public class UnsuccessfulLoginTest extends TestUtil {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(userName, password);
 
-        Assert.assertTrue(loginPage.checkErrorLoginLabel(), "The login error message is not displayed displayed");
+        Assert.assertTrue(loginPage.checkErrorLoginLabel(), "The login error message is not displayed !");
 
     }
 }
