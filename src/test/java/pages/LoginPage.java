@@ -26,7 +26,7 @@ public class LoginPage {
     @FindBy(css = "[class=error-button]")
     private WebElement errorLoginLabel;
 
-
+//POM constructor for page class
     public LoginPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -54,7 +54,7 @@ public class LoginPage {
         return new ProductsPage(driver);
     }
 
-    public void errorLoginLabel (){
+    public boolean checkErrorLoginLabel (){
 
         //fluent wait
         FluentWait fluentWait = new FluentWait(driver)
@@ -63,6 +63,12 @@ public class LoginPage {
                 .ignoreAll(Collections.singleton(NoSuchElementException.class));
 
         fluentWait.until(ExpectedConditions.elementToBeClickable(errorLoginLabel));
-        Assert.assertTrue(errorLoginLabel.isDisplayed());
+
+        try {
+            boolean result = errorLoginLabel.isDisplayed();
+            return result;
+        }catch (NoSuchElementException e) {
+            return false;
+        }
     }
 }

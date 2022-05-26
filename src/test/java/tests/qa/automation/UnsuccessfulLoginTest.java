@@ -2,6 +2,7 @@ package tests.qa.automation;
 
 import base.TestUtil;
 import com.opencsv.exceptions.CsvException;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
@@ -20,8 +21,8 @@ public class UnsuccessfulLoginTest extends TestUtil {
         //POM
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(userName, password);
-        loginPage.errorLoginLabel();
 
+        Assert.assertTrue(loginPage.checkErrorLoginLabel(), "The login error message is not displayed displayed");
 
     }
 }
