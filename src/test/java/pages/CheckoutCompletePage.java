@@ -23,7 +23,7 @@ public class CheckoutCompletePage {
             PageFactory.initElements(driver, this);
         }
 
-        public void thanksMessage (){
+        public boolean CheckThanksMessage (){
 
             //fluent wait
             FluentWait fluentWait = new FluentWait(driver)
@@ -32,7 +32,13 @@ public class CheckoutCompletePage {
                     .ignoreAll(Collections.singleton(NoSuchElementException.class));
 
             fluentWait.until(ExpectedConditions.elementToBeClickable(thanksMessage));
-            Assert.assertTrue(thanksMessage.isDisplayed());
+
+            try {
+                boolean result = thanksMessage.isDisplayed();
+                return result;
+            }catch (NoSuchElementException e) {
+                return false;
+            }
         }
     }
 

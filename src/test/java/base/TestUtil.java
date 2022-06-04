@@ -67,6 +67,7 @@ public class TestUtil {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
         loadUrl(url);
+        driver.manage().window().maximize();
     }
 
     private void createFirefoxDriver(String url, int implicitWait){
@@ -74,6 +75,7 @@ public class TestUtil {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
         loadUrl(url);
+        driver.manage().window().maximize();
     }
 
     private void createEdgeDriver(String url, int implicitWait){
@@ -81,6 +83,7 @@ public class TestUtil {
         driver = new EdgeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
         loadUrl(url);
+        driver.manage().window().maximize();
     }
 
     private void createOperaDriver(String url, int implicitWait){
@@ -88,5 +91,6 @@ public class TestUtil {
         driver = new OperaDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
         loadUrl(url);
+        driver.manage().window().maximize();
     }
 }

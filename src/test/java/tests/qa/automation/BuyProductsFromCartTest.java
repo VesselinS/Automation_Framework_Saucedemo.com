@@ -2,6 +2,7 @@ package tests.qa.automation;
 
 import base.TestUtil;
 import com.opencsv.exceptions.CsvException;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.*;
@@ -25,7 +26,7 @@ public class BuyProductsFromCartTest extends TestUtil {
         CheckoutCompletePage checkoutCompletePage = new CheckoutCompletePage(driver);
         ProductsPage productsPage = loginPage.login(userName, password);
 
-        productsPage.userAllPagesButton();
+        Assert.assertTrue(productsPage.checkUserAllPagesButton(), "The burger menu don't appear !");
         productsPage.addItemToTheCart(product1);
         productsPage.addItemToTheCart(product2);
         productsPage.addItemToTheCart(product3);
@@ -33,7 +34,8 @@ public class BuyProductsFromCartTest extends TestUtil {
         cartPage.Checkout();
         checkoutInformationPage.Checkout();
         checkoutOverviewPage.Checkout();
-        checkoutCompletePage.thanksMessage();
+        Assert.assertTrue(checkoutCompletePage.CheckThanksMessage(), "Order thank you message is not displayed !");
+
 
     }
 }

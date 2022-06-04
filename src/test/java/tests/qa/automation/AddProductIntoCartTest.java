@@ -2,6 +2,7 @@ package tests.qa.automation;
 
 import base.TestUtil;
 import com.opencsv.exceptions.CsvException;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
@@ -22,7 +23,7 @@ public class AddProductIntoCartTest extends TestUtil {
         LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login(userName, password);
 
-        productsPage.userAllPagesButton();
+        Assert.assertTrue(productsPage.checkUserAllPagesButton(), "The burger menu don't appear !");
         productsPage.addItemToTheCart(product1);
         productsPage.addItemToTheCart(product2);
         productsPage.addItemToTheCart(product3);

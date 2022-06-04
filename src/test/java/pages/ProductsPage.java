@@ -33,7 +33,7 @@ public class ProductsPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void userAllPagesButton (){
+    public boolean checkUserAllPagesButton (){
 
         //fluent wait
         FluentWait fluentWait = new FluentWait(driver)
@@ -42,7 +42,13 @@ public class ProductsPage {
                 .ignoreAll(Collections.singleton(NoSuchElementException.class));
 
         fluentWait.until(ExpectedConditions.elementToBeClickable(userAllPagesButton));
-        Assert.assertTrue(userAllPagesButton.isDisplayed());
+
+        try {
+            boolean result = userAllPagesButton.isDisplayed();
+            return result;
+        }catch (NoSuchElementException e) {
+            return false;
+        }
     }
 
     public void addItemToTheCart(String productName){
