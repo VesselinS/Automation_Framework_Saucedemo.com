@@ -14,7 +14,7 @@ public class DragAndDropTest extends TestUtil {
     public void DragAndDrop()
     {
         DragAndDropPage dragAndDropPage = new DragAndDropPage(driver);
-        dragAndDropPage.DragDrop();
+        dragAndDropPage.dragDrop();
 
 
     }

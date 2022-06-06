@@ -16,7 +16,7 @@ public class UploadFileTest extends TestUtil {
     public void UploadFile() throws AWTException, InterruptedException {
         //POM
         UploadFilePage uploadFile = new UploadFilePage(driver);
-        uploadFile.Upload();
+        uploadFile.upload();
 
     }
 }

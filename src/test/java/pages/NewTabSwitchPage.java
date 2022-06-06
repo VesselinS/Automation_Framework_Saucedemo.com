@@ -25,7 +25,7 @@ public class NewTabSwitchPage {
         PageFactory.initElements(driver, this);
     }
 
-    public NewTabSwitchPage NewTabSwitch(){
+    public NewTabSwitchPage newTabSwitch(){
 
         //fluent wait
         FluentWait fluentWait = new FluentWait(driver)

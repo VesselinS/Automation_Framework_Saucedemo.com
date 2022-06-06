@@ -28,7 +28,7 @@ public class DragAndDropPage {
         PageFactory.initElements(driver, this);
     }
 
-    public DragAndDropPage DragDrop(){
+    public DragAndDropPage dragDrop(){
 
         //fluent wait
         FluentWait fluentWait = new FluentWait(driver)

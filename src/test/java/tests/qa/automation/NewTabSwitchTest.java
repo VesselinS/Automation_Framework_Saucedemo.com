@@ -14,7 +14,7 @@ public class NewTabSwitchTest extends TestUtil {
     public void NewTabSwitch()
     {
         NewTabSwitchPage newTabSwitchPage = new NewTabSwitchPage(driver);
-        newTabSwitchPage.NewTabSwitch();
+        newTabSwitchPage.newTabSwitch();
 
 
     }

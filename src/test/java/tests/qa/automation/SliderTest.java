@@ -14,7 +14,7 @@ public class SliderTest extends TestUtil {
     public void Slider()
     {
         SliderPage sliderPage = new SliderPage(driver);
-        sliderPage.Slider();
+        sliderPage.slider();
 
 
     }

@@ -26,7 +26,7 @@ public class UploadFilePage {
         PageFactory.initElements(driver, this);
     }
 
-    public UploadFilePage Upload() throws AWTException, InterruptedException {
+    public UploadFilePage upload() throws AWTException, InterruptedException {
 
         //fluent wait
         FluentWait fluentWait = new FluentWait(driver)

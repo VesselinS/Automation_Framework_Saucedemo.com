@@ -24,7 +24,7 @@ public class SliderPage {
         PageFactory.initElements(driver, this);
     }
 
-    public SliderPage Slider(){
+    public SliderPage slider(){
 
         //fluent wait
         FluentWait fluentWait = new FluentWait(driver)
