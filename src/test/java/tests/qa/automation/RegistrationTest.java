@@ -1,18 +1,13 @@
 package tests.qa.automation;
 
 import base.TestUtil;
-import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.RegistrationPage;
 import utils.CsvHelper;
 
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
-
-import static pages.RegistrationPage.createCsvDataSimple;
 
 public class RegistrationTest extends TestUtil {
 
@@ -24,7 +19,7 @@ public class RegistrationTest extends TestUtil {
         return CsvHelper.readCsvFile("src/test/resources/RegistrationData.csv");
     }
 
-    @Test(dataProvider = "csvUserList")
+    @Test(dataProvider = "csvUserList", invocationCount = 6)
     public void Registration(String firstName, String lastName, String email, String password, String confirmPassword) throws IOException {
         //POM
         RegistrationPage registrationPage = new RegistrationPage(driver);
