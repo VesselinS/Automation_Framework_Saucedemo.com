@@ -24,10 +24,10 @@ public class TestUtil {
         setupBrowserDriver();
     }
 
-    @AfterMethod
-    public void tearDown(){
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void tearDown(){
+//        driver.quit();
+//    }
 
     private void setupBrowserDriver(){
         try (FileInputStream configFile = new FileInputStream("src/test/resources/config.properties")){

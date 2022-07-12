@@ -1,12 +1,13 @@
 package pages;
 
-import org.openqa.selenium.NoSuchElementException;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.io.File;
 import java.time.Duration;
 import java.util.Collections;
 
@@ -70,4 +71,22 @@ public class LoginPage {
             return false;
         }
     }
-}
+
+    public void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception{
+
+        //Convert web driver object to TakeScreenshot
+
+        TakesScreenshot scrShot =((TakesScreenshot)webdriver);
+
+        //Call getScreenshotAs method to create image file
+
+        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+
+        //Move image file to new destination
+
+        File DestFile=new File(fileWithPath);
+
+        //Copy file at destination
+
+        FileUtils.copyFile(SrcFile, DestFile);
+    }}

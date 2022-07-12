@@ -65,8 +65,8 @@ public class RegistrationPage {
         fluentWait.until(ExpectedConditions.elementToBeClickable(popUpConfirmation));
         popUpConfirmation.click();
 
-        fluentWait.until(ExpectedConditions.elementToBeClickable(advertisementClose));
-        advertisementClose.click();
+//        fluentWait.until(ExpectedConditions.elementToBeClickable(advertisementClose));
+//        advertisementClose.click();
 
         fluentWait.until(ExpectedConditions.elementToBeClickable(firstNameInput));
 

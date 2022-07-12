@@ -18,12 +18,14 @@ public class SuccessfulLoginTest extends TestUtil {
     }
 
     @Test(dataProvider = "csvUserList")
-    public void SuccessfulLogin(String userName, String password, String product1, String product2, String product3){
+    public void SuccessfulLogin(String userName, String password, String product1, String product2, String product3) throws Exception {
         //POM
         LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login(userName, password);
 
         Assert.assertTrue(productsPage.checkUserAllPagesButton(), "The burger menu don't appear !");
+
+        loginPage.takeSnapShot(driver,"C:\\Users\\35987\\OneDrive\\Desktop\\test.png");
 
     }
 }
